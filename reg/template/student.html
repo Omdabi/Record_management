@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+
+
+
+<div class="col-md-6 offset-md-3">
+    <h2 class=''>STUDENT</h2>
+    <form method="POST" action="" novalidate>
+        {% csrf_token %}
+        <div>
+            {{form.as_p}}
+        </div>
+
+        <button type="submit" class="btn btn-secondary">Enter student</button>
+    </form>
+
+</div>
+
+{% endblock %}

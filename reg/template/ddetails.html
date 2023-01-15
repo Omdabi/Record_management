@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2 class="text-center">department details</h2>
+<table class="table table-dark table-hover">
+    <thead>
+        <th>s no</th>
+        <th>id</th>
+        <th>department</th>
+    </thead>
+    {% if data %}
+    <div>
+        {% for d in data %}
+        <tbody>
+            <td>{{ forloop.counter }}</td>
+            <td>{{d.id}}</td>
+            <td>{{d.dept_name}}</td>
+            <td><button type="submit" class="btn btn-secondary"><a href="{% url 'Delete' d.id %}">Delete</a></button></td>
+            <td><button type="submit" class="btn btn-secondary"><a href="{% url 'update' d.id %}">update</a></button></td>
+        </tbody>
+        {% endfor %}
+    </div>
+    {% endif %}
+</table>
+
+{% endblock %}
